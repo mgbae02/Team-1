@@ -14,17 +14,17 @@
     </tr>
     <tr>
         <td align="center"><img src="https://avatars.githubusercontent.com/u/122501996?v=4"></td>
-        <td align="center"><img src=""></td>
-        <td align="center"><img src=""></td>
+        <td align="center"><img src="https://avatars.githubusercontent.com/u/100691648?v=4"></td>
+        <td align="center"><img src="https://avatars.githubusercontent.com/u/190811869?v=4"></td>
         <td align="center"><img src="https://avatars.githubusercontent.com/u/180186989?v=4"></td>
-        <td align="center"><img src=""></td>
+        <td align="center"><img src="https://avatars.githubusercontent.com/u/180899585?v=4"></td>
     </tr>
     <tr>
         <td align="center"><b><a href="https://github.com/Jun279">박제준</a></b></td>
-        <td align="center"><b><a href="https://github.com/">김서희</a></b></td>
-        <td align="center"><b><a href="https://github.com/">김예나</a></b></td>
+        <td align="center"><b><a href="https://github.com/suki186">김서희</a></b></td>
+        <td align="center"><b><a href="https://github.com/a-neey">김예나</a></b></td>
         <td align="center"><b><a href="https://github.com/mgbae02">배민규</a></b></td> 
-        <td align="center"><b><a href="https://github.com/">조윤지</a></b></td>
+        <td align="center"><b><a href="https://github.com/yj-044">조윤지</a></b></td>
     </tr>
 </table>
 
