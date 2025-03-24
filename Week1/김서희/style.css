@@ -1,0 +1,8 @@
+/*
+    a: Selector, color: Property, darkgreen: Value
+    Property + Value = Declaration
+*/
+h1 a {
+  color: #3d86b7;
+  text-decoration: none;
+}
