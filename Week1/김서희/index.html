@@ -9,6 +9,25 @@
 
   <!-- body: 본문 -->
   <body>
+    <!-- 다크/라이트모드 버튼 -->
+    <!-- 간단한 버튼 -> input, 다양한 UI -> button -->
+    <input
+      type="button"
+      value="Dark"
+      onclick="
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+    "
+    />
+    <input
+      type="button"
+      value="Light"
+      onclick="
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+    "
+    />
+
     <h1>
       <a href="index.html">My WEB Study Note</a>
     </h1>
