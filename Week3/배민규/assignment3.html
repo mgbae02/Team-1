@@ -2,9 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-
     <title>숫자 맞히기 게임</title>
-
     <style>
       html {
         font-family: sans-serif;
@@ -24,6 +22,15 @@
       .lastResult {
         color: white;
         padding: 3px;
+      }
+
+      .resetButton {
+        margin-top: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #eee;
+        border: none;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -46,9 +53,77 @@
     </div>
 
     <script>
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      let guessCount = 1;
+      const guesses = document.querySelector('.guesses');
+      const lastResult = document.querySelector('.lastResult');
+      const lowOrHi = document.querySelector('.lowOrHi');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const guessField = document.querySelector('.guessField');
+      const formArea = document.querySelector('.form');
 
-      // [과제] js 코드를 작성해주세요!
+      let resetButton;
 
+      function checkGuess() {
+        const userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+          guesses.textContent = '예측한 숫자들: ';
+        }
+
+        guesses.textContent += `${userGuess} `;
+
+        if (userGuess === randomNumber) {
+          lastResult.textContent = '축하합니다! 맞췄습니다다!';
+          lastResult.style.backgroundColor = 'green';
+          lowOrHi.textContent = '';
+          setGameOver();
+        } else if (guessCount === 10) {
+          lastResult.textContent = '기회를 모두 사용하셨습니다. 게임 오버!';
+          lastResult.style.backgroundColor = 'red';
+          lowOrHi.textContent = '';
+          setGameOver();
+        } else {
+          lastResult.textContent = '틀렸습니다!';
+          lastResult.style.backgroundColor = 'red';
+          if (userGuess < randomNumber) {
+            lowOrHi.textContent = '예측한 값이 작습니다!';
+          } else {
+            lowOrHi.textContent = '예측한 값이 큽니다!';
+          }
+        }
+
+        guessCount++;
+        guessField.value = '';
+        guessField.focus();
+      }
+
+      guessSubmit.addEventListener('click', checkGuess);
+
+      function setGameOver() {
+        guessField.disabled = true;
+        guessSubmit.disabled = true;
+        resetButton = document.createElement('button');
+        resetButton.textContent = '게임 다시 시작';
+        resetButton.className = 'resetButton';
+        document.body.appendChild(resetButton);
+        resetButton.addEventListener('click', resetGame);
+      }
+
+      function resetGame() {
+        guessCount = 1;
+        const resetParas = document.querySelectorAll('.resultParas p');
+        for (let para of resetParas) {
+          para.textContent = '';
+        }
+
+        resetButton.remove();
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
+        guessField.focus();
+        lastResult.style.backgroundColor = 'transparent';
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+      }
     </script>
   </body>
 </html>
